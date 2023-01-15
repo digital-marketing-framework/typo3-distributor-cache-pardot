@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  DigitalMarketingFramework\Typo3\Distributor\Cache\Pardot\:
+    resource: '../Classes/*'
+
+  DigitalMarketingFramework\Typo3\Distributor\Cache\Pardot\Registry\EventListener\DistributorRegistryPluginUpdateEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'digital-marketing-framework/distributor-cache-pardot/registry-update/distributor/plugin'
+        event: DigitalMarketingFramework\Typo3\Distributor\Core\Registry\Event\DistributorRegistryPluginUpdateEvent
